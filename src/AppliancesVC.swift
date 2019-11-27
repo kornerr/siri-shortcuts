@@ -87,7 +87,8 @@ class AppliancesVC: UIViewController
 
         let index = indexPath.row
         let item = self.items[index]
-        cell.textLabel?.text = item.type.rawValue
+        let textId = item.type.rawValue
+        cell.textLabel?.text = NSLocalizedString(textId, comment: "")
         //self.dequeued[cell.view] = index
         
         return cell

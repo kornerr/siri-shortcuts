@@ -1,9 +1,9 @@
 
 enum ApplianceType: String
 {
-    case kettle = "Kettle"
-    case multicooker = "Multicooker"
-    case coffeeMachine = "Coffee machine"
+    case kettle = "Type.Kettle"
+    case multicooker = "Type.Multicooker"
+    case coffeeMachine = "Type.CoffeeMachine"
 }
 
 struct Appliance

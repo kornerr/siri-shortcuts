@@ -261,17 +261,20 @@ func startLastView(forVC vc: UIViewController) -> UIView
     // Create zero height view just to serve as the first `lastView`.
     let view = UIView()
     vc.view.addSubview(view)
-    view.widthAnchor == vc.view.widthAnchor
     view.heightAnchor == 0
 
     // Attach it to the safe area's top.
     if #available(iOS 11.0, *)
     {
         view.topAnchor == vc.view.safeAreaLayoutGuide.topAnchor
+        view.leftAnchor == vc.view.safeAreaLayoutGuide.leftAnchor
+        view.rightAnchor == vc.view.safeAreaLayoutGuide.rightAnchor
     }
     else
     {
         view.topAnchor == vc.topLayoutGuide.bottomAnchor
+        view.leftAnchor == vc.view.leftAnchor
+        view.rightAnchor == vc.view.rightAnchor
     }
 
     return view

@@ -1,3 +1,6 @@
 "Appliances.Title" = "Appliances";
 "Appliance.Add.Title" = "Add";
 "Appliance.Edit.Title" = "Edit";
+"Type.Kettle" = "Kettle";
+"Type.Multicooker" = "Multicooker";
+"Type.CoffeeMachine" = "Coffee machine";

@@ -1,14 +1,25 @@
+import Anchorage
 import UIKit
 
 class ApplianceVC: UIViewController
 {
 
+    private var lastView: UIView!
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+
         self.setupCancellation()
         self.setupApplication()
+
+        self.setupType()
+
+        // Layout.
+        self.lastView = startLastView(forVC: self)
+        self.layoutType()
+        //finishLastView(self.lastView, forVC: self)
     }
 
     private func LOG(_ message: String)
@@ -61,4 +72,30 @@ class ApplianceVC: UIViewController
     {
         self.apply.report()
     }
+
+    // MARK: - TYPE
+
+    private var typeLabel: UILabel!
+    private var typeSC: UISegmentedControl!
+
+    private func setupType()
+    {
+        let items = [
+            NSLocalizedString("Type.Kettle", comment: ""),
+            NSLocalizedString("Type.CoffeeMachine", comment: ""),
+            NSLocalizedString("Type.Multicooker", comment: ""),
+        ]
+        self.typeSC = UISegmentedControl(items: items)
+        self.view.addSubview(self.typeSC)
+    }
+
+    private func layoutType()
+    {
+        self.typeSC.topAnchor == self.lastView.bottomAnchor + 8
+        self.typeSC.leftAnchor == self.view.leftAnchor + 8
+        self.typeSC.rightAnchor == self.view.rightAnchor - 8
+
+        self.lastView = self.typeSC
+    }
+
 }

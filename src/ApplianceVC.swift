@@ -77,10 +77,16 @@ class ApplianceVC: UIViewController
 
     // MARK: - TYPE
 
+    private var _type: ApplianceType?
     var type: ApplianceType?
     {
-        didSet
+        get
         {
+            return self._type
+        }
+        set
+        {
+            self._type = newValue
             self.typeChanged.report()
         }
     }
@@ -95,11 +101,41 @@ class ApplianceVC: UIViewController
         self.typeLabel.text = NSLocalizedString("Type.Title", comment: "")
         self.view.addSubview(self.typeLabel)
 
-        let items = applianceTypeTitles()
+        let items = ApplianceType.allCases.map { NSLocalizedString($0.rawValue, comment: "") }
         self.typeSC = UISegmentedControl(items: items)
         self.view.addSubview(self.typeSC)
         
-        // Initial selection.
+        // Display initial selection.
+        self.updateType()
+        // Keep selection in sync.
+        self.typeChanged.subscribe { [weak self] in
+            self?.updateType()
+        }
+
+        // Track user selection.
+        self.typeSC.addTarget(
+            self,
+            action: #selector(trackType),
+            for: .valueChanged
+        )
+    }
+
+    private func updateType()
+    {
+        guard
+            let type = self.type,
+            let id = applianceTypeToId(type)
+        else
+        {
+            return
+        }
+
+        self.typeSC.selectedSegmentIndex = id
+    }
+
+    @objc private func trackType()
+    {
+        self._type = idToApplianceType(self.typeSC.selectedSegmentIndex)
     }
 
     private func layoutType()
@@ -117,6 +153,15 @@ class ApplianceVC: UIViewController
 
     // MARK: - STATE
 
+    var state: Bool?
+    {
+        didSet
+        {
+            self.stateChanged.report()
+        }
+    }
+    let stateChanged = Reporter()
+
     private var stateLabel: UILabel!
     private var stateSC: UISegmentedControl!
 
@@ -132,6 +177,19 @@ class ApplianceVC: UIViewController
         ]
         self.stateSC = UISegmentedControl(items: items)
         self.view.addSubview(self.stateSC)
+
+        // Display initial state.
+        self.updateState()
+        // Keep state in sync.
+        self.stateChanged.subscribe { [weak self] in
+            self?.updateState()
+        }
+    }
+
+    private func updateState()
+    {
+        guard let state = self.state else { return }
+        self.stateSC.selectedSegmentIndex = state ? 1 : 0
     }
 
     private func layoutState()

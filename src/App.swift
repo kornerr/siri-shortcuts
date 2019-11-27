@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             this.applianceVC.title =
                 NSLocalizedString("Appliance.Add.Title", comment: "")
             this.applianceVC.type = .kettle
-            this.applianceVC.state = .off
+            this.applianceVC.state = false
 
             this.appliancesVC.present(
                 this.applianceNC,
@@ -96,6 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
         // Apply item modifications.
         self.applianceVC.apply.subscribe { [weak self] in
+
             // TODO Save changes
             self?.applianceVC.dismiss(animated: true, completion: nil)
         }

@@ -1,0 +1,13 @@
+name: Siri Shortcuts
+options:
+    bundleIdPrefix: su.koren
+targets:
+    siri-shortcuts:
+        type: application
+        platform: iOS
+        deploymentTarget: "10.0"
+        sources:
+            - path: "../src"
+        settings:
+            base:
+                INFOPLIST_FILE: Info.plist

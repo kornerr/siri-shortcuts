@@ -65,9 +65,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             self?.imagesController.refresh()
         }
 
-        // Load images the first time.
-        self.imagesController.refresh()
         */
+
+        // Load the first time.
+        self.appliancesController.refresh()
     }
 
 }

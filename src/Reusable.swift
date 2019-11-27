@@ -234,15 +234,15 @@ public class Reporter
 
 }
 
-// MARK: - Use any UIView inside a collection view cell.
+// MARK: - Use any UIView inside a table view cell.
 
-class UICollectionViewCellTemplate<ItemView: UIView>: UICollectionViewCell
+class UITableViewCellTemplate<ItemView: UIView>: UITableViewCell
 {
     var itemView: ItemView!
 
-    override init(frame: CGRect)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?)
     {
-        super.init(frame: frame)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         // Create and embed item view.
         self.itemView = ItemView()
         self.contentView.embeddedView = self.itemView
@@ -250,7 +250,7 @@ class UICollectionViewCellTemplate<ItemView: UIView>: UICollectionViewCell
 
     required init?(coder aDecoder: NSCoder)
     {
-        fatalError("UICollectionViewCellTemplate. ERROR: init(coder:) not implemented")
+        fatalError("UITableViewCellTemplate. ERROR: init(coder:) not implemented")
     }
 }
 

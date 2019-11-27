@@ -17,7 +17,7 @@ class AppliancesController
 
     // MARK: - ITEMS
 
-    var items = [String]()
+    var items = [Appliance]()
     {
         didSet
         {
@@ -28,60 +28,11 @@ class AppliancesController
 
     func loadItems()
     {
-        /*
-        guard
-            let url = URL(string: self.API_BASE_URL + self.API_KEY)
-        else
-        {
-            LOG("ERROR Request URL was malformed")
-            return
-        }
-
-        Alamofire.request(url).responseJSON { [weak self] response in
-            let result = response.result
-            // Success.
-            if
-                result.isSuccess,
-                let value = result.value
-            {
-                self?.parseItemsJSON(JSON(value))
-            }
-            // Failure.
-            else
-            {
-                self?.LOG("ERROR Could not get images: '\(String(describing: result.error))'")
-            }
-        }
-        */
+        self.items = [
+            Appliance(type: .kettle, state: true),
+            Appliance(type: .coffeeMachine, state: false),
+            Appliance(type: .multicooker, state: false),
+        ]
     }
-
-    /*
-    private func parseItemsJSON(_ json: JSON)
-    {
-        let jsonItems = json["photos"]["photo"]
-
-        var items = [String]()
-        for jsonItem in jsonItems
-        {
-            let ji = jsonItem.1
-            let urlString =
-                flickrImageURLString(
-                    forFarm: ji["farm"].stringValue,
-                    server: ji["server"].stringValue,
-                    id: ji["id"].stringValue,
-                    secret: ji["secret"].stringValue
-                )
-            items.append(urlString)
-
-            // Only parse LIMIT number of JSON items.
-            if items.count >= self.LIMIT
-            {
-                break
-            }
-        }
-
-        self.items = items
-    }
-    */
 
 }

@@ -1,9 +1,18 @@
 
-enum ApplianceType: String
+enum ApplianceType: Int
 {
-    case kettle = "Type.Kettle"
-    case multicooker = "Type.Multicooker"
-    case coffeeMachine = "Type.CoffeeMachine"
+    case kettle
+    case multicooker
+    case coffeeMachine
+}
+
+func applianceTypeTitles() -> [String]
+{
+    return [
+        NSLocalizedString("Type.Kettle", comment: ""),
+        NSLocalizedString("Type.CoffeeMachine", comment: ""),
+        NSLocalizedString("Type.Multicooker", comment: ""),
+    ]
 }
 
 struct Appliance

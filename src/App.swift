@@ -56,6 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             guard let this = self else { return }
             this.applianceVC.title =
                 NSLocalizedString("Appliance.Add.Title", comment: "")
+            this.applianceVC.type = .kettle
+            this.applianceVC.state = .off
+
             this.appliancesVC.present(
                 this.applianceNC,
                 animated: true,
@@ -65,9 +68,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
         // Edit item.
         self.appliancesVC.selectedItemIdChanged.subscribe { [weak self] in
-            guard let this = self else { return }
+            guard
+                let this = self,
+                let id = this.appliancesVC.selectedItemId
+            else
+            {
+                return
+            }
+
+            let item = this.appliancesController.items[id]
             this.applianceVC.title =
                 NSLocalizedString("Appliance.Edit.Title", comment: "")
+            this.applianceVC.type = item.type
+            this.applianceVC.state = item.state
+
             this.appliancesVC.present(
                 this.applianceNC,
                 animated: true,

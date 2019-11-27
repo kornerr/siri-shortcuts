@@ -77,6 +77,15 @@ class ApplianceVC: UIViewController
 
     // MARK: - TYPE
 
+    var type: ApplianceType?
+    {
+        didSet
+        {
+            self.typeChanged.report()
+        }
+    }
+    let typeChanged = Reporter()
+
     private var typeLabel: UILabel!
     private var typeSC: UISegmentedControl!
 
@@ -86,13 +95,11 @@ class ApplianceVC: UIViewController
         self.typeLabel.text = NSLocalizedString("Type.Title", comment: "")
         self.view.addSubview(self.typeLabel)
 
-        let items = [
-            NSLocalizedString("Type.Kettle", comment: ""),
-            NSLocalizedString("Type.CoffeeMachine", comment: ""),
-            NSLocalizedString("Type.Multicooker", comment: ""),
-        ]
+        let items = applianceTypeTitles()
         self.typeSC = UISegmentedControl(items: items)
         self.view.addSubview(self.typeSC)
+        
+        // Initial selection.
     }
 
     private func layoutType()

@@ -15,10 +15,12 @@ class ApplianceVC: UIViewController
         self.setupApplication()
 
         self.setupType()
+        self.setupState()
 
         // Layout.
         self.lastView = startLastView(forVC: self)
         self.layoutType()
+        self.layoutState()
         //finishLastView(self.lastView, forVC: self)
     }
 
@@ -80,6 +82,10 @@ class ApplianceVC: UIViewController
 
     private func setupType()
     {
+        self.typeLabel = UILabel()
+        self.typeLabel.text = NSLocalizedString("Type.Title", comment: "")
+        self.view.addSubview(self.typeLabel)
+
         let items = [
             NSLocalizedString("Type.Kettle", comment: ""),
             NSLocalizedString("Type.CoffeeMachine", comment: ""),
@@ -91,11 +97,47 @@ class ApplianceVC: UIViewController
 
     private func layoutType()
     {
+        self.typeLabel.topAnchor == self.lastView.bottomAnchor + 16
+        self.typeLabel.leftAnchor == self.view.leftAnchor + 8
+        self.typeLabel.rightAnchor == self.view.rightAnchor - 8
+        self.lastView = self.typeLabel
+        
         self.typeSC.topAnchor == self.lastView.bottomAnchor + 8
         self.typeSC.leftAnchor == self.view.leftAnchor + 8
         self.typeSC.rightAnchor == self.view.rightAnchor - 8
-
         self.lastView = self.typeSC
+    }
+
+    // MARK: - STATE
+
+    private var stateLabel: UILabel!
+    private var stateSC: UISegmentedControl!
+
+    private func setupState()
+    {
+        self.stateLabel = UILabel()
+        self.stateLabel.text = NSLocalizedString("State.Title", comment: "")
+        self.view.addSubview(self.stateLabel)
+
+        let items = [
+            NSLocalizedString("State.Off", comment: ""),
+            NSLocalizedString("State.On", comment: ""),
+        ]
+        self.stateSC = UISegmentedControl(items: items)
+        self.view.addSubview(self.stateSC)
+    }
+
+    private func layoutState()
+    {
+        self.stateLabel.topAnchor == self.lastView.bottomAnchor + 16
+        self.stateLabel.leftAnchor == self.view.leftAnchor + 8
+        self.stateLabel.rightAnchor == self.view.rightAnchor - 8
+        self.lastView = self.stateLabel
+        
+        self.stateSC.topAnchor == self.lastView.bottomAnchor + 8
+        self.stateSC.leftAnchor == self.view.leftAnchor + 8
+        self.stateSC.rightAnchor == self.view.rightAnchor - 8
+        self.lastView = self.stateSC
     }
 
 }

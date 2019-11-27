@@ -28,13 +28,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
     // MARK: - APPLIANCES
 
+    private var applianceVC: ApplianceVC!
+    private var applianceNC: UINavigationController!
+
     private var appliancesVC: AppliancesVC!
     private var appliancesController: AppliancesController!
     
     private func setupAppliances()
     {
         self.appliancesVC = AppliancesVC()
-        self.appliancesVC.title = NSLocalizedString("Appliances.Title", comment: "")
+        self.appliancesVC.title =
+            NSLocalizedString("Appliances.Title", comment: "")
+
+        self.applianceVC = ApplianceVC()
+        self.applianceNC =
+            UINavigationController(rootViewController: self.applianceVC)
 
         self.appliancesController = AppliancesController()
         self.appliancesController.itemsChanged.subscribe { [weak self] in
@@ -43,29 +51,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             self?.appliancesVC.items = items
         }
 
-        /*
-        // Display image in full screen upon selection.
-        // Only for loaded images.
-        self.imagesVC.selectedItemIdChanged.subscribe { [weak self] in
-            guard
-                let imagesVC = self?.imagesVC,
-                let imageVC = self?.imageVC,
-                let image = imagesVC.images[imagesVC.selectedItemId]
-            else
-            {
-                return
-            }
-
-            imageVC.image = image
-            imagesVC.show(imageVC, sender: nil)
+        // Add item.
+        self.appliancesVC.addItem.subscribe { [weak self] in
+            guard let this = self else { return }
+            this.applianceVC.title =
+                NSLocalizedString("Appliance.Add.Title", comment: "")
+            this.appliancesVC.present(
+                this.applianceNC,
+                animated: true,
+                completion: nil
+            )
         }
 
-        // Refresh images.
-        self.imagesVC.refreshImages.subscribe { [weak self] in
-            self?.imagesController.refresh()
+        // Edit item.
+        self.appliancesVC.selectedItemIdChanged.subscribe { [weak self] in
+            guard let this = self else { return }
+            this.applianceVC.title =
+                NSLocalizedString("Appliance.Edit.Title", comment: "")
+            this.appliancesVC.present(
+                this.applianceNC,
+                animated: true,
+                completion: nil
+            )
         }
 
-        */
+        // Cancel item modifications.
+        self.applianceVC.cancel.subscribe { [weak self] in
+            self?.applianceVC.dismiss(animated: true, completion: nil)
+        }
+
+        // Apply item modifications.
+        self.applianceVC.apply.subscribe { [weak self] in
+            // TODO Save changes
+            self?.applianceVC.dismiss(animated: true, completion: nil)
+        }
 
         // Load the first time.
         self.appliancesController.refresh()

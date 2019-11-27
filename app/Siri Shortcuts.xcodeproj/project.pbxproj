@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		473A224551A79AF06428BCF3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECED257A7FAB6353497619C /* App.swift */; };
-		57533927C64987FB295969B8 /* Pods_siri_shortcuts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03167A9D5E01D8AEFB0AE75B /* Pods_siri_shortcuts.framework */; };
+		4966AA478C6455B1EB8F6E8D /* Pods_siri_shortcuts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C062459453CD49C59E8D37D7 /* Pods_siri_shortcuts.framework */; };
 		65451FD374BF79227D163C1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91127A38B5AB5424E776592A /* Localizable.strings */; };
 		65946DA538AA4DC5B6FB636B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54D902ED37DD0E710F29CBD /* LaunchScreen.storyboard */; };
+		6AB3435E09A21A7A15051AEB /* ApplianceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A619012F741136830CEC71 /* ApplianceVC.swift */; };
 		754A774B7F19F2D10D69FA9D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA9E31E5E81E18E09488C48 /* Reusable.swift */; };
 		85FFDD155714AE5495E28A4E /* Appliance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889535D19405E80F5ED291CD /* Appliance.swift */; };
 		A30614BE147C7CBDA25944AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14DFACE180ACCC7EB9A55D3B /* Assets.xcassets */; };
@@ -20,39 +21,58 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		03167A9D5E01D8AEFB0AE75B /* Pods_siri_shortcuts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_siri_shortcuts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DFACE180ACCC7EB9A55D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		15A619012F741136830CEC71 /* ApplianceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplianceVC.swift; sourceTree = "<group>"; };
+		207FCC48E5CC022FC196C6FF /* Pods-siri-shortcuts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-siri-shortcuts.release.xcconfig"; path = "Target Support Files/Pods-siri-shortcuts/Pods-siri-shortcuts.release.xcconfig"; sourceTree = "<group>"; };
 		3ECED257A7FAB6353497619C /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		694706B9E577393021CBCF8F /* Pods-siri-shortcuts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-siri-shortcuts.debug.xcconfig"; path = "Target Support Files/Pods-siri-shortcuts/Pods-siri-shortcuts.debug.xcconfig"; sourceTree = "<group>"; };
 		6BA9E31E5E81E18E09488C48 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
-		6E159357F8EDA081E4734ADE /* Pods-siri-shortcuts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-siri-shortcuts.release.xcconfig"; path = "Target Support Files/Pods-siri-shortcuts/Pods-siri-shortcuts.release.xcconfig"; sourceTree = "<group>"; };
-		71C3FF9EFD292D665C9C9E9B /* Pods-siri-shortcuts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-siri-shortcuts.debug.xcconfig"; path = "Target Support Files/Pods-siri-shortcuts/Pods-siri-shortcuts.debug.xcconfig"; sourceTree = "<group>"; };
 		889535D19405E80F5ED291CD /* Appliance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appliance.swift; sourceTree = "<group>"; };
 		91127A38B5AB5424E776592A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B54D902ED37DD0E710F29CBD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B80E0EF464F72340263EAE0D /* AppliancesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliancesController.swift; sourceTree = "<group>"; };
+		C062459453CD49C59E8D37D7 /* Pods_siri_shortcuts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_siri_shortcuts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7D81584E158C5792BD27DF /* siri-shortcuts.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "siri-shortcuts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06B11C5403192A7E037FC3D /* siri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = siri.png; sourceTree = "<group>"; };
 		F08DADF73D6A11ECDDDC7565 /* AppliancesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliancesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F6AFC4B7CA21C7F8980BA654 /* Frameworks */ = {
+		9FEA4E77BFA3E3959D7A493E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57533927C64987FB295969B8 /* Pods_siri_shortcuts.framework in Frameworks */,
+				4966AA478C6455B1EB8F6E8D /* Pods_siri_shortcuts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AF61CA54CF82B8A1AB4F983 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C062459453CD49C59E8D37D7 /* Pods_siri_shortcuts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		22DE90CEA05D85286695D0D2 /* img */ = {
 			isa = PBXGroup;
 			children = (
 				D06B11C5403192A7E037FC3D /* siri.png */,
 			);
 			path = img;
+			sourceTree = "<group>";
+		};
+		50E5CBE84234E59881BF123C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				694706B9E577393021CBCF8F /* Pods-siri-shortcuts.debug.xcconfig */,
+				207FCC48E5CC022FC196C6FF /* Pods-siri-shortcuts.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		59CB3157DAAD5A494ADAA919 /* Products */ = {
@@ -68,27 +88,9 @@
 			children = (
 				F73F00B4D1B7B17FFF159C14 /* src */,
 				59CB3157DAAD5A494ADAA919 /* Products */,
-				A2B8BCA02EBB8B7F6B5387A8 /* Pods */,
-				7AACBF1A43B3BD046D67F709 /* Frameworks */,
+				50E5CBE84234E59881BF123C /* Pods */,
+				1AF61CA54CF82B8A1AB4F983 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		7AACBF1A43B3BD046D67F709 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				03167A9D5E01D8AEFB0AE75B /* Pods_siri_shortcuts.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A2B8BCA02EBB8B7F6B5387A8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				71C3FF9EFD292D665C9C9E9B /* Pods-siri-shortcuts.debug.xcconfig */,
-				6E159357F8EDA081E4734ADE /* Pods-siri-shortcuts.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		F73F00B4D1B7B17FFF159C14 /* src */ = {
@@ -98,6 +100,7 @@
 				889535D19405E80F5ED291CD /* Appliance.swift */,
 				B80E0EF464F72340263EAE0D /* AppliancesController.swift */,
 				F08DADF73D6A11ECDDDC7565 /* AppliancesVC.swift */,
+				15A619012F741136830CEC71 /* ApplianceVC.swift */,
 				14DFACE180ACCC7EB9A55D3B /* Assets.xcassets */,
 				B54D902ED37DD0E710F29CBD /* LaunchScreen.storyboard */,
 				91127A38B5AB5424E776592A /* Localizable.strings */,
@@ -115,11 +118,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 385F8F08D09267C6D00B7B35 /* Build configuration list for PBXNativeTarget "siri-shortcuts" */;
 			buildPhases = (
-				8FF20A1065AACC1943DE20EE /* [CP] Check Pods Manifest.lock */,
+				EC26E1ECFDBE83F779583E4A /* [CP] Check Pods Manifest.lock */,
 				250491A64503D1230C779B7D /* Sources */,
 				01190F19C924BAE4F3191FD6 /* Resources */,
-				F6AFC4B7CA21C7F8980BA654 /* Frameworks */,
-				FF1185F02264589E539CB2BE /* [CP] Embed Pods Frameworks */,
+				9FEA4E77BFA3E3959D7A493E /* Frameworks */,
+				63E44C638595844C0FD904C3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,7 +173,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8FF20A1065AACC1943DE20EE /* [CP] Check Pods Manifest.lock */ = {
+		63E44C638595844C0FD904C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-siri-shortcuts/Pods-siri-shortcuts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-siri-shortcuts/Pods-siri-shortcuts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-siri-shortcuts/Pods-siri-shortcuts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC26E1ECFDBE83F779583E4A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -192,23 +212,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FF1185F02264589E539CB2BE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-siri-shortcuts/Pods-siri-shortcuts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-siri-shortcuts/Pods-siri-shortcuts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-siri-shortcuts/Pods-siri-shortcuts-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -218,6 +221,7 @@
 			files = (
 				473A224551A79AF06428BCF3 /* App.swift in Sources */,
 				85FFDD155714AE5495E28A4E /* Appliance.swift in Sources */,
+				6AB3435E09A21A7A15051AEB /* ApplianceVC.swift in Sources */,
 				EF4A03BEEE601D0BAF00FBC9 /* AppliancesController.swift in Sources */,
 				C54D4F0606AD81D1029D2435 /* AppliancesVC.swift in Sources */,
 				754A774B7F19F2D10D69FA9D /* Reusable.swift in Sources */,
@@ -229,7 +233,7 @@
 /* Begin XCBuildConfiguration section */
 		58F0FC604BD384D20A834AB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71C3FF9EFD292D665C9C9E9B /* Pods-siri-shortcuts.debug.xcconfig */;
+			baseConfigurationReference = 694706B9E577393021CBCF8F /* Pods-siri-shortcuts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -247,7 +251,7 @@
 		};
 		6920AA1F9933495AE40484FE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E159357F8EDA081E4734ADE /* Pods-siri-shortcuts.release.xcconfig */;
+			baseConfigurationReference = 207FCC48E5CC022FC196C6FF /* Pods-siri-shortcuts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

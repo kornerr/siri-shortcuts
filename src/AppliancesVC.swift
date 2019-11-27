@@ -2,31 +2,19 @@ import UIKit
 
 class AppliancesVC: UIViewController
     ,UITableViewDataSource
-//    ,UITableViewDelegate
+    ,UITableViewDelegate
 {
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.setupTableView()
-        
         self.tableView.register(Cell.self, forCellReuseIdentifier: self.CELL_ID)
-        
-        /*
-
-        // Images.
-        self.itemsChanged.subscribe { [weak self] in
-            self?.downloadItemImages()
-        }
-        self.imagesChanged.subscribe { [weak self] in
-            self?.applyItemImages()
-        }
 
         // Selection.
-        self.collectionView.delegate = self
-
-        self.setupRefreshImages()
-        */
+        self.tableView.delegate = self
+        
+        self.setupAddition()
     }
 
     private func LOG(_ message: String)
@@ -76,9 +64,9 @@ class AppliancesVC: UIViewController
         return self.cell(forItemAt: indexPath)
     }
 
-    // MARK: - TODO IMAGES
+    // MARK: - TODO ?
 
-    //private var dequeued = [CellView : Int]()
+    // private var dequeued = [CellView : Int]()
 
     // MARK: - CELL
 
@@ -94,6 +82,9 @@ class AppliancesVC: UIViewController
                 withIdentifier: self.CELL_ID,
                 for: indexPath
             )
+        cell.selectionStyle = .none
+        cell.accessoryType = .disclosureIndicator
+
         let index = indexPath.row
         let item = self.items[index]
         cell.textLabel?.text = item.type.rawValue
@@ -102,10 +93,9 @@ class AppliancesVC: UIViewController
         return cell
     }
 
-    /*
     // MARK: - SELECTION
 
-    var selectedItemId: Int = 0
+    var selectedItemId: Int?
     {
         didSet
         {
@@ -114,36 +104,34 @@ class AppliancesVC: UIViewController
     }
     let selectedItemIdChanged = Reporter()
 
-    func collectionView(
-        _ collectionView: UICollectionView,
-        didSelectItemAt indexPath: IndexPath
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
     ) {
         self.selectedItemId = indexPath.row
     }
-    */
 
-    // MARK: - REFRESH IMAGES
+    // MARK: - ADDITION
 
-    /*
-    let refreshImages = Reporter()
-    private var refreshButton: UIBarButtonItem!
+    let addItem = Reporter()
+    private var addButton: UIBarButtonItem!
 
-    private func setupRefreshImages()
+    private func setupAddition()
     {
-        self.refreshButton =
+        self.addButton =
             UIBarButtonItem(
-                barButtonSystemItem: .refresh,
+                barButtonSystemItem: .add,
                 target: self,
-                action: #selector(requestRefreshImages)
+                action: #selector(requestAddition)
             )
         var items: [UIBarButtonItem] = self.navigationItem.rightBarButtonItems ?? []
-        items.append(self.refreshButton)
+        items.append(self.addButton)
         self.navigationItem.rightBarButtonItems = items
     }
 
-    @objc func requestRefreshImages(_ sender: Any)
+    @objc func requestAddition(_ sender: Any)
     {
-        self.refreshImages.report()
+        self.addItem.report()
     }
- */
+
 }
